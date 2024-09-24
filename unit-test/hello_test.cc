@@ -1,9 +1,11 @@
 #include <gtest/gtest.h>
 #include <iostream>
 
-// to compile ----> cmake --build build   from unit-test directory
-// and then ----> .\build\hello_test.exe
-
+/*to compile
+1. cmake -S . -B build  -G "MinGW Makefiles"
+2. cmake --build build   from unit-test directory
+3. .\build\hello_test.exe
+*/
 class Leapyear{
     public:
         Leapyear(){};
@@ -58,3 +60,21 @@ INSTANTIATE_TEST_CASE_P(
                 std::make_tuple(1996, true),
                 std::make_tuple(1700, false),
                 std::make_tuple(1600, true)));
+
+class fixtureTest : public ::testing::Test{    
+    protected:
+    fixtureTest(){};
+    virtual void setup(){
+        str1= "I am a string";
+        str2= "I am also a string";
+    }
+    virtual void teardown(){
+        str1=str2= "";
+    }
+    std::string str1, str2;
+};
+
+TEST_F(fixtureTest, equalTest){
+    ASSERT_TRUE(str1 == str2 );
+    ASSERT_TRUE(str1 != str2 );
+}
