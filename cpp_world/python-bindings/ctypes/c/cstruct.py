@@ -1,6 +1,6 @@
 import ctypes
 
-cstruct = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/cstruct.so")
+cstruct = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/c/cstruct.so")
 
 class Point(ctypes.Structure):
     _fields_ = [("x", ctypes.c_int),

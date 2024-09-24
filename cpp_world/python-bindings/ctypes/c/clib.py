@@ -1,6 +1,6 @@
 import ctypes
 
-clib = ctypes.CDLL("C:\learn\CPP1114\cpp_world\python-bindings\ctypes\clib.so")
+clib = ctypes.CDLL("C:\learn\CPP1114\cpp_world\python-bindings\ctypes\c\clib.so")
 clib.display(b"Name", 18)
 
 func=clib.display

@@ -1,6 +1,6 @@
 import ctypes
 
-carray = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/carray.so")
+carray = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/c/carray.so")
 
 values = (ctypes.c_int * 10)()
 

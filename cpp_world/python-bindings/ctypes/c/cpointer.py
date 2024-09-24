@@ -1,6 +1,6 @@
 import ctypes
 
-cpointer = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/cpointer.so")
+cpointer = ctypes.CDLL("C:/learn/CPP1114/cpp_world/python-bindings/ctypes/c/cpointer.so")
 
 alloc_func = cpointer.alloc_mem
 alloc_func.restype = ctypes.POINTER(ctypes.c_char_p)
