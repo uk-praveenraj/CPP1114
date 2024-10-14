@@ -130,3 +130,24 @@ TEST(EndToEndTest, DivisionByZeroTest) {
 }
 
 
+// class CalculatorMultipleParametersTests :public ::testing::TestWithParam<std::tuple<std::string, std::string>> {    
+
+// };
+
+// INSTANTIATE_TEST_CASE_P(
+//         CalculatorTests,
+//         CalculatorMultipleParametersTests,
+//         ::testing::Values(
+//                 std::make_tuple("-10 / -2\n", "5"),
+//                 std::make_tuple("2 + 3\n", "5"),
+//                 std::make_tuple("2.0+3.5\n", "5.5"),
+//                 std::make_tuple("2.0-3.5\n", "-1.5"),
+//                 std::make_tuple("2.0/1.0\n", "2")));
+
+// TEST_P(CalculatorMultipleParametersTests, TestForOperations) {
+//     std::string input = std::get<0>(GetParam());
+//     std::string val = std::get<1>(GetParam());
+
+//     std::string output = runCalculatorWithArgs(input);
+//     EXPECT_TRUE(output.find(RESULT+val) != std::string::npos);
+// } // or like this, but no so readable
