@@ -1,0 +1,37 @@
+pipeline {
+    agent any // dummy pipeline
+
+    stages {
+        stage('Build All') {
+            steps {
+                sh 'make'
+            }
+        }
+        stage('Run Unit Tests') {
+            steps {
+                sh 'make test'
+            }
+        }
+        stage('Run End-to-End Tests') {
+            steps {
+                sh 'make e2e'
+            }
+        }
+        stage('Deployment, if any') {
+            steps {
+                sh 'make e2e'
+            }
+        }
+        stage('CleanUp') { 
+            steps {
+                sh 'make clean'
+            }
+        }
+    }
+    post {
+        // or use CleanWS() instead of above CleanUp stage
+        always {
+            junit '**/test-results/*.xml'
+        }
+    }
+}
