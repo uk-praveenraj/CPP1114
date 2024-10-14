@@ -1,5 +1,8 @@
 # Calculator
 
+## Dependency
+Install google test library, if not already available
+
 ## Build Instructions
 1. Clone the repository or extract the archive.
 2. Run the following command to build the project:
