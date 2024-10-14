@@ -10,6 +10,10 @@ int main() {
     std::cout << "(eg: 1 + 2 ) Supported operators are +, -, / and *" << std::endl;
     std::cin >> operand1 >> oper >> operand2;
 
+    if(!std::cin.good()){
+        std::cout << "Invalid inputs!" << std::endl;
+        return 1;
+    }
     try {
         double result;
         switch (oper) {

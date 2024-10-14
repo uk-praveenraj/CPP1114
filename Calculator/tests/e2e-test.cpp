@@ -129,6 +129,19 @@ TEST(EndToEndTest, DivisionByZeroTest) {
     }
 }
 
+TEST(EndToEndTest, InvalidOperands) {    
+    std::string input = "a / b\n";
+    std::string output = runCalculatorWithArgs(input);
+    EXPECT_TRUE(output.find("Invalid inputs!") != std::string::npos);
+}
+
+TEST(EndToEndTest, InvalidOperator) {    
+    std::string input = "5 & 6\n";
+    std::string output = runCalculatorWithArgs(input);
+    EXPECT_TRUE(output.find("Invalid choice!") != std::string::npos);
+}
+
+
 
 // class CalculatorMultipleParametersTests :public ::testing::TestWithParam<std::tuple<std::string, std::string>> {    
 
