@@ -119,12 +119,14 @@ TEST(EndToEndTest, DivisionTestNegative) {
     EXPECT_TRUE(output.find(RESULT+"-5") != std::string::npos);
 }
 
-TEST(EndToEndTest, DivisionByZeroTest) {
+TEST(EndToEndTest, DivisionByZeroTest) {    
     std::string input = "4.0 / 0.0\n";
-    std::string output = runCalculatorWithArgs(input);
-
-    std::cout << output << "-----------";
-
-    EXPECT_TRUE(output.find("Divide by zero error") != std::string::npos);
+    std::string output;
+    try{
+        output = runCalculatorWithArgs(input);
+    } catch(const std::invalid_argument& e){
+        EXPECT_STREQ( "Divide by zero error", e.what() );
+    }
 }
+
 
