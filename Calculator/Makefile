@@ -13,7 +13,7 @@ unit_tests: Calculator.o CalculatorTest.o
 	$(CXX) $(CXXFLAGS) -o unit_tests Calculator.o CalculatorTest.o $(LDFLAGS)
 
 e2e_tests: Calculator.o e2e-test.o
-	$(CXX) $(CXXFLAGS) -o e2e-test Calculator.o e2e-test.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o e2e_tests Calculator.o e2e-test.o $(LDFLAGS)
 
 # object files
 Calculator.o: Calculator.cpp Calculator.h
@@ -40,7 +40,7 @@ test: unit_tests
 run: CalculatorCLI
 	./CalculatorCLI
 
-# run end-to-end test
+# run end-to-end tests
 e2e: e2e_tests
 	./e2e_tests
 
