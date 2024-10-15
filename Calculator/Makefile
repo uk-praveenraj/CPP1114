@@ -1,6 +1,6 @@
 # variables
 CXX = g++
-CXXFLAGS = -Wall -std=c++14
+CXXFLAGS = -Wall -std=c++14 # -fprofile-arcs -ftest-coverage
 LDFLAGS = -lgtest -lgtest_main -pthread
 
 # targets

@@ -29,3 +29,22 @@ Usage:
     ```bash
     make clean
     ```
+
+## Code Coverage
+Ensure lcov is installed 
+1. Enable the flags in Makefile 
+    ```bash
+    -fprofile-arcs -ftest-coverage
+    ```
+2. Run the below commands to make it with coverage info
+    ```bash
+    make all
+    make tests
+    make e2e
+    ```
+3. Run getCov.sh
+    ```bash
+    ./getCov.sh
+    ```
+4. The html report can be found in the file: cov/index.html
+
